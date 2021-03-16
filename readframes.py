@@ -47,18 +47,18 @@ print (framerate_ga)
 
 time_ga = np.linspace(start = 0, stop = len(ga_convertida)/framerate_ga)
 
-print(time_ga)
+print(time_ga[:10])
 
 #Generacion de la grafica
 
 plt.title('Good morning vs Good Afternoon')
 
-plt.xlabel('Tiempo (segundos')
+plt.xlabel('Tiempo (segundos)')
 plt.ylabel('Amplitud')
 
 #agregar infomracion de las ondas para graficar
-plt.plot(time_gm, goodmorning, label='Good morning')
-plt.plot(time_gm, goodmorning, label='Good morning', alpha=0.5)
+plt.plot(time_ga, ga_convertida, label="Good Afternoon")
+plt.plot(time_gm, ondaconvertida, label="Good Morning", alpha=0.5)
 
 plt.legend()
 plt.show()
@@ -83,17 +83,6 @@ time_br =  np.linspace(start=0, stop=len(br_convertida)/framerate_br)
 
 print (time_br)
 
-plt.title('Bruh')
-
-plt.xlabel('Tiempo (segundos)')
-plt.ylabel('Amplitud')
-
-plt.plot(time_br, goodmorning, label='Bruh')
-plt.plot(time_br, goodmorning, label='Bruh', alpha=0.5)
-
-plt.legend()
-plt.show()
-
 #nice
 
 nice = wave.open('nice.wav', 'r')
@@ -114,13 +103,13 @@ time_nc =  np.linspace(start=0, stop=len(nc_convertida)/framerate_nc)
 
 print (time_nc)
 
-plt.title('Nice')
+plt.title('Nice vs. Bruh')
 
 plt.xlabel('Tiempo (segundos)')
 plt.ylabel('Amplitud')
 
-plt.plot(time_nc, goodmorning, label='Nice')
-plt.plot(time_nc, goodmorning, label='Nice', alpha=0.5)
+plt.plot(time_nc, nc_convertida, label='Nice')
+plt.plot(time_br, br_convertida, label='Bruh', alpha=0.5)
 
 plt.legend()
 plt.show()
